@@ -1,0 +1,43 @@
+// src/components/Slider.jsx
+
+import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import React, { useState } from 'react';
+import './Slider.css'; // Import your CSS file for styling
+
+const Slider = () => {
+    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const images = [
+        'https://img.freepik.com/free-photo/focused-doctor-working-his-desk_23-2147646746.jpg?t=st=1718890042~exp=1718893642~hmac=2cb9c44859cf01dffe05b04eb17a2c4a65f4354b427bca8bbd0f3d2f7a8bcd63&w=996',
+        'https://img.freepik.com/free-photo/doctors-checking-medical-history_1098-526.jpg?t=st=1718889961~exp=1718893561~hmac=184f9d74bd67a7ed48f920d22e6ae9f027b4e90790c96b214fcfd16f37693fb3&w=996',
+        'https://www.healthka.in/static/media/ambulance.0024f3003480db6b114b.jpg',
+    ];
+
+    const nextSlide = () => {
+        const newIndex = (currentImageIndex + 1) % images.length;
+        setCurrentImageIndex(newIndex);
+    };
+
+    const prevSlide = () => {
+        const newIndex = (currentImageIndex - 1 + images.length) % images.length;
+        setCurrentImageIndex(newIndex);
+    };
+
+    return (
+        <div className="relative h-[600px] bg-red-100 overflow-hidden">
+            <div
+                className="slide"
+                style={{
+                    backgroundImage: `url(${images[currentImageIndex]})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                    transform: `translateX(-${currentImageIndex * 100}%)`, // Adjust slide animation
+                }}
+            />
+            <button className="prev" onClick={prevSlide}><FontAwesomeIcon icon={faChevronLeft} /></button>
+            <button className="next" onClick={nextSlide}><FontAwesomeIcon icon={faChevronRight} /></button>
+        </div>
+    );
+}
+
+export default Slider;

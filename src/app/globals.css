@@ -2,13 +2,424 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
+
+
+#banner-1 .video-background {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: -1;
+  pointer-events: none;
+}
+
+.curtain {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  background-color: blue;
+  z-index: 100;
+}
+
+.curtain-left {
+  left: 0;
+}
+
+.curtain-right {
+  right: 0;
+}
+
+.mobile-nav {
+  height: 0;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  /* Smooth transition effect */
+}
+
+.mobile-nav.open {
+  height: 288px;
+  /* Expand to full height */
+  background-color: white;
+  /* Change to your desired background color */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* components/Transition.module.css */
+
+#transition-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+#transition-overlay.active {
+  opacity: 1;
+}
+
+.curtain {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  background-color: blue;
+  top: 0;
+  transition: transform 1s ease;
+}
+
+.curtain.left {
+  left: 0;
+  transform: translateX(0);
+}
+
+.curtain.right {
+  right: 0;
+  transform: translateX(0);
+}
+
+.curtain.open.left {
+  transform: translateX(-100%);
+}
+
+.curtain.open.right {
+  transform: translateX(100%);
+}
+
+
+
+.height-element {
+  height: 0%;
+  opacity: 100;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.before-height:hover .height-element {
+  height: 80%;
+  opacity: 1;
+  visibility: visible;
+  align-items: center;
+}
+
+.before-element::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 0%;
+  background: #f31d64;
+  border-radius: 5px 5px 0 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.before-element-1::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 1px;
+  width: 0%;
+  background: white;
+  border-radius: 5px 5px 0 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.before-element-2::before {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 0%;
+  background: #888;
+  border-radius: 5px 5px 0 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.active .before-element::before {
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Hover effect xto transition the before element */
+a:hover .before-element::before {
+  width: 98%;
+  opacity: 1;
+  visibility: visible;
+  align-items: center;
+}
+
+@keyframes increaseWidthLeft {
+  0% {
+    width: 0;
+    transform-origin: left;
+  }
+
+  100% {
+    width: 100%;
+    transform-origin: left;
+  }
+}
+
+.news_hover_div {
+  height: 3px;
+  width: 0%;
+  background: #f31d64;
+  border-radius: 5px 5px 0 0;
+  opacity: 1;
+  transition: all 0.4s ease;
+  transform-origin: left;
+}
+
+.news_hover:hover .news_hover_div {
+  width: 100%;
+  opacity: 1;
+  visibility: visible;
+  transform-origin: left;
+  align-items: center;
+}
+
+.blog_hover_div {
+  height: 100%;
+  width: 0%;
+  background: #f31d64;
+  border-radius: 5px 5px 0 0;
+  opacity: 1;
+  transition: all 0.4s ease;
+  transform-origin: left;
+}
+
+.blog_hover:hover .blog_hover_div {
+  width: 5%;
+  opacity: 1;
+  visibility: visible;
+  transform-origin: left;
+  align-items: center;
+}
+
+a:hover .before-element-1::before {
+  width: 88%;
+  opacity: 1;
+  visibility: visible;
+  align-items: center;
+}
+
+a:hover .before-element-2::before {
+  width: 88%;
+  opacity: 1;
+  visibility: visible;
+  align-items: center;
+}
+
+.btn {
+  background-color: #1a76d1;
+  color: #ffffff;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 0;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.375rem;
+  background-color: #f31d64;
+  transform: translate(-50%, -50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+  pointer-events: none;
+}
+
+.btn:hover::before {
+  transform: translate(-50%, -50%) scaleX(1);
+}
+
+/* ////////////////Btn - Type 2 */
+a:hover .before-element::before {
+  width: 98%;
+  opacity: 1;
+  visibility: visible;
+  align-items: center;
+}
+
+.btn2 {
+  background-color: #f31d64;
+  color: #ffffff;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 0;
+}
+
+.btn3 {
+  background-color: white;
+  color: #1a76d1;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  outline: none;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  z-index: 0;
+}
+
+.btn2::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.375rem;
+  background-color: #1a76d1;
+  transform: translate(-50%, -50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+  pointer-events: none;
+}
+
+.btn2:hover::before {
+  transform: translate(-50%, -50%) scaleX(1);
+}
+
+.btn3::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 0.375rem;
+  background-color: #f31d64;
+  transform: translate(-50%, -50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.4s ease;
+  pointer-events: none;
+}
+
+.btn3:hover::before {
+  transform: translate(-50%, -50%) scaleX(1);
+}
+
+.btn3:hover {
+  color: white;
+}
+
+
+/* .numbers_bg::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: full;
+  height: full;
+  background-image: url('/patient-portal1.png');
+background-color: #1a76d1;
+background-size: cover;
+background-repeat: no-repeat;
+opacity: 0.8;
+background-color: #1a76d1;
+}
+
+
+* .numbers_bg>* {
+  z-index: 2;
+  /* Ensures the content is above the overlay */
+/* }  */
+
+.section_title_bg::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 300px;
+  opacity: 0.8;
+  background-color: #1a76d1;
+}
+
+.section_title_bg>* {
+  z-index: 2;
+  /* Ensures the content is above the overlay */
+}
+
+.emergency_bg::before {
+  content: "";
+  position: absolute;
+  top: 1/2;
+  left: 1/2;
+  width: 100%;
+  height: 420px;
+  opacity: 0.8;
+  background-color: #1a76d1;
+  z-index: 1;
+}
+
+.emergency_bg>* {
+  z-index: 2;
+  /* Ensures the content is above the overlay */
+}
+
+.outer_div_numbers:hover .inner_div_numbers {
+  background-color: white;
+  color: #1a76d1;
+}
+
+.body {
+  @apply font-custom;
+}
+
+/* styles/globals.css */
+@font-face {
+  font-family: "Poppins";
+  src: url("https: //fonts.google.com/specimen/Poppins") format("truetype");
+}
+
+/* 
+body {
+  font-family: 'Poppins', sans-serif;
+} */
+
+/* /* :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
-}
+} */
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
@@ -30,4 +441,5 @@ body {
   .text-balance {
     text-wrap: balance;
   }
-}
+} */
+/* Custom styles for the before pseudo-element */

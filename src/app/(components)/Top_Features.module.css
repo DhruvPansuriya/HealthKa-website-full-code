@@ -1,0 +1,53 @@
+.background_image_container>* {
+    position: relative;
+    z-index: 10;
+}
+
+.background_image_container::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background-image: url('/24-7.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
+}
+
+.background_image_container2>* {
+    position: relative;
+    z-index: 10;
+}
+
+.background_image_container2::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 170px;
+    background-image: url('/patient-portal1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
+}
+
+.background_image_container3>* {
+    position: relative;
+    z-index: 10;
+}
+
+.background_image_container3::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 200px;
+    height: 200px;
+    background-image: url('/10-min-delivery.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 5;
+}
