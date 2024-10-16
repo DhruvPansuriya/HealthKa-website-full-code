@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
+// next.config.js
+export const images = {
+  domains: ["img.freepik.com", "news.mit.edu"], // Add the domain for external images
+};

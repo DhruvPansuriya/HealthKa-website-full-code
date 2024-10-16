@@ -1,27 +1,26 @@
 const News_data = [
   {
-    image:
-      "https://img.freepik.com/free-photo/doctor-getting-patient-ready-ct-scan_23-2149367401.jpg?t=st=1719001067~exp=1719004667~hmac=d17ca0362eb76eb3c9fc1c73524ca6ed0621dce8ea32139fa559c3eed24e5be2&w=996",
+    image: "/nexus-logo.png",
     title: "We have annnocuced our new product.",
-    date: "22 Aug, 2020",
+    date: "10 Sep, 2024",
     description:
-      "Lorem Ipsum Dolor A Sit Ameti, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Sed Do Incididunt Sed.",
+      "ERP software for doctors,clinic and hospital. Manages Patient records and make day to day work seamless",
   },
   {
     image:
-      "https://img.freepik.com/free-photo/indian-doctor-receives-patient-tells-him-about-results-tests-medicine-health_496169-2765.jpg?t=st=1719001128~exp=1719004728~hmac=c6a37ff35393708e07c95856299d258719eb64b67365179c75c70199582033a6&w=996",
-    title: "We have annnocuced our new product.",
-    date: "22 Aug, 2020",
+      "https://news.mit.edu/sites/default/files/images/202409/MIT-3Q-AI-Label-01-press.jpg",
+    title: "AI prescription coming soon",
+    date: "coming soon",
     description:
-      "Lorem Ipsum Dolor A Sit Ameti, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Sed Do Incididunt Sed.",
+      "Make your unreadable and odd prescription to a readable prescription by a simple scan",
   },
   {
-    image:
-      "https://img.freepik.com/free-photo/clean-empty-hospital-ward-ready-receive-patients-reflecting-modern-medical-care_91128-4608.jpg?t=st=1719001149~exp=1719004749~hmac=4888cef17ab2eefac64f71c52ceae9f59a8be5fcaa2afe00f0f2bac3410da743&w=1380",
-    title: "We have annnocuced our new product.",
-    date: "22 Aug, 2020",
+    image: "/app_features_4.jpg",
+    title:
+      "One app for Medicine, Doctors , Diagnostics , Ambulance and Hospital (Coming soon)",
+    date: "Coming Soon",
     description:
-      "Lorem Ipsum Dolor A Sit Ameti, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Sed Do Incididunt Sed.",
+      "A single app for all your health care needs is going to launch soon. Stay tuned and updated",
   },
 ];
 export default News_data;

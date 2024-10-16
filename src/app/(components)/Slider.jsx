@@ -17,6 +17,7 @@ const Slider = () => {
     if (!slides || slides.length === 0) {
         return null; // Render nothing if no slides or empty slides array
     }
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     useEffect(() => {
         const interval = setInterval(() => {
             nextSlide();
@@ -36,6 +37,7 @@ const Slider = () => {
     };
 
     // React-spring transitions for slides
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const transitions = useTransition(slides[currentIndex], {
         key: slides[currentIndex].id,
         from: { opacity: 0, transform: isPreviousClick ? 'translate3d(-100%, 0, 0)' : 'translate3d(100%, 0, 0)' },

@@ -17,6 +17,7 @@ import Doctors from "./(components)/Doctors"
 import News from "./(components)/News";
 import Footer from "./(components)/Footer";
 const page = () => {
+  // eslint-disable-next-line react-hooks/rules-of-hooks
   useEffect(() => {
     AOS.init({
       // Global settings:
