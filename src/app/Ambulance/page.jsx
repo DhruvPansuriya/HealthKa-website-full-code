@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react-hooks/rules-of-hooks */
 "use client";
 import React, { useState, useEffect } from "react";
@@ -33,6 +34,7 @@ const page = () => {
       nextSlide();
     }, 4000);
     return () => clearInterval(interval);
+    // eslint-disable-next-line
   }, [currentIndex, slides.length]);
   // Function to move to the next slide
   const nextSlide = () => {

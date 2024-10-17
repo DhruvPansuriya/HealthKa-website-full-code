@@ -75,7 +75,12 @@ const page = () => {
             >
               {/* Blog Image */}
               <div className="rounded-t-xl sm:rounded-l-xl sm:rounded-t-none h-[200px] sm:h-[350px] xl:h-[400px] w-full sm:w-1/2 bg-cover bg-center">
-                <Image src={blog.image} width={500} height={200} />
+                <Image
+                  src={blog.image}
+                  width={500}
+                  height={200}
+                  alt={"Image"}
+                />
               </div>
 
               {/* Blog Content */}
